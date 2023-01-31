@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(ObtenerPreguntas("https://opentdb.com/api.php?amount=50&category=25&difficulty=medium&type=multiple"));
     }
 
     // Update is called once per frame
@@ -15,4 +15,11 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+private IEnumerator ObtenerPreguntas(string pagWeb)
+    {
+        yield return new WaitForSeconds(3);
+        Debug.Log("Función corrutinta prueba");
+    }
+
 }
