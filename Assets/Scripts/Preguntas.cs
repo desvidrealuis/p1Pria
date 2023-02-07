@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Preguntas : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class Preguntas {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string response_code;
+    public Pregunta[] results;
+
 }
