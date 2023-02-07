@@ -38,6 +38,16 @@ public class GameManager : MonoBehaviour
                     break;
                 case UnityWebRequest.Result.Success:
                     Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
+
+                    Preguntas preguntasDescargadas = JsonUtility.FromJson<Preguntas>(webRequest.downloadHandler.text);
+                    
+                    Debug.Log($"Preguntas solicitadas: "+ preguntasDescargadas.results.Count);
+
+                    Debug.Log($"Dificultad: {preguntasDescargadas.results[0].difficulty}" + "\n" +
+                    $"Cuestión: {preguntasDescargadas.results[0].question}" + "\n" +
+                    $"Respuesta correcta: {preguntasDescargadas.results[0].correct_answer}" + "\n" +
+                    $"Respuestea incorrecta: {preguntasDescargadas.results[0].incorrect_answers[0]}");
+
                     break;
             }
         }
